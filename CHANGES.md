@@ -18,7 +18,7 @@ This is a modified version of PLIP (Protein-Ligand Interaction Profiler)
 
 \## Modifications
 
-\- Date: March 2026
+\- Date: 2026
 
 \- Modified by: Pedro Tenório T. F. Leite
 
