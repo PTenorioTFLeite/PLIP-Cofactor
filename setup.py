@@ -11,8 +11,8 @@ setup(
     packages=find_packages(),
     scripts=['plipcmd.py'],
     install_requires=[
-        'openbabel>=3.0.0',
-        'pymol-open-source',
+        # openbabel should be installed via conda: conda install -c conda-forge openbabel
+        # pymol should be installed via conda: conda install -c schrodinger pymol
     ],
     python_requires='>=3.6',
     author='Your Name (based on original PLIP by Salentin et al.)',
