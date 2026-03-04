@@ -22,7 +22,7 @@ This fork adds a `--cofactor` option that allows you to specify molecules (like 
 
 ```bash
 
-pip install git+https://github.com/YOUR\_USERNAME/plip-cofactor.git
+pip install git+https://github.com/PTenorioTFLeite/PLIP-Cofactor.git
 
 ```
 
@@ -32,7 +32,7 @@ pip install git+https://github.com/YOUR\_USERNAME/plip-cofactor.git
 
 ```bash
 
-git clone https://github.com/YOUR\_USERNAME/plip-cofactor.git
+git clone https://github.com/PTenorioTFLeite/PLIP-Cofactor.git
 
 cd plip-cofactor
 
