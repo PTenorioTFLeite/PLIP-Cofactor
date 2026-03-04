@@ -7,7 +7,7 @@ def read(fname):
 
 setup(
     name='plip-cofactor',
-    version='2.3.0-cofactor.1',
+    version='2.3.0.post1',
     packages=find_packages(),
     scripts=['plipcmd.py'],
     install_requires=[
