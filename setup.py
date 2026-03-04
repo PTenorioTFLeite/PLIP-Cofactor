@@ -20,7 +20,7 @@ setup(
         # pymol should be installed via conda: conda install -c schrodinger pymol
     ],
     python_requires='>=3.6',
-    author='Pedro Tenório T F Leite (adapted from original PLIP by Salentin et al.)',
+    author='Pedro Leite (adapted from original PLIP by Salentin et al.)',
     author_email='pedrottfl@gmail.com',
     description='PLIP with cofactor support - treats cofactors as protein components',
     long_description=read('README.md'),
