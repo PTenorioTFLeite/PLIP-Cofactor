@@ -15,6 +15,7 @@ setup(
         ],
     },
     install_requires=[
+        'lxml',
         # openbabel should be installed via conda: conda install -c conda-forge openbabel
         # pymol should be installed via conda: conda install -c schrodinger pymol
     ],
