@@ -9,7 +9,11 @@ setup(
     name='plip-cofactor',
     version='2.3.0.post1',
     packages=find_packages(),
-    scripts=['plipcmd.py'],
+    entry_points={
+        'console_scripts': [
+            'plip=plip.plipcmd:main',
+        ],
+    },
     install_requires=[
         # openbabel should be installed via conda: conda install -c conda-forge openbabel
         # pymol should be installed via conda: conda install -c schrodinger pymol
