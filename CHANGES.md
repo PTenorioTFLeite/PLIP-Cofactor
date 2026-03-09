@@ -24,47 +24,47 @@ This is a modified version of PLIP (Protein-Ligand Interaction Profiler)
 
 
 
-\### Changes Made:
+### Changes Made:
 
+#### 1. Added COFACTOR Configuration Variable
+- **File**: `plip/basic/config.py`
+- **Line Added**: `COFACTOR = []`
+- **Purpose**: Global configuration to store list of cofactor residue names
 
+#### 2. Added `--cofactor` Command-Line Argument
+- **File**: `plipcmd.py`
+- **Lines Added**: 
+```python
+  parser.add_argument("--cofactor", dest="cofactor", default=[],
+                      help="Allows to define one or multiple residue names to be treated as part of the protein structure",
+                      nargs="+")
+```
+- **Configuration Assignment**: `config.COFACTOR = arguments.cofactor`
+- **Purpose**: Allow users to specify cofactor molecules via command line
 
-\#### 1. Added `--cofactor` Command-Line Option
+#### 3. Modified Ligand Filtering
+- **File**: `plip/structure/preparation.py`
+- **Method**: `filter_for_ligands()`
+- **Lines Added**:
+```python
+  if config.COFACTOR:  # If cofactors are specified to be part of the protein
+      candidates1 = [res for res in candidates1 if res.GetName() not in config.COFACTOR]
+```
+- **Purpose**: Exclude specified cofactors from ligand candidate list
 
-\- \*\*File\*\*: `plipcmd.py`
+#### 4. Modified Protein Residue Definition
+- **File**: `plip/structure/preparation.py`
+- **Method**: `load_pdb()` in `PDBComplex` class
+- **Lines Added**:
+```python
+  if config.COFACTOR:
+      self.resis = [obres for obres in pybel.ob.OBResidueIter(
+          self.protcomplex.OBMol) if obres.GetName() in config.COFACTOR
+      ] + [obres for obres in pybel.ob.OBResidueIter(
+          self.protcomplex.OBMol) if obres.GetResidueProperty(0)]
+```
+- **Purpose**: Include specified cofactors in protein residue list for interaction detection
 
-\- \*\*Change\*\*: Added argument parser option for specifying cofactors
-
-\- \*\*Code\*\*: Added `parser.add\_argument("--cofactor", ...)`
-
-
-
-\#### 2. Added COFACTOR Configuration Variable
-
-\- \*\*File\*\*: `plip/basic/config.py`
-
-\- \*\*Change\*\*: Added `COFACTOR = \[]` configuration variable
-
-
-
-\#### 3. Modified Ligand Filtering Logic
-
-\- \*\*File\*\*: `plip/structure/preparation.py`
-
-\- \*\*Method\*\*: `filter\_for\_ligands()`
-
-\- \*\*Change\*\*: Exclude cofactors from ligand candidates
-
-\- \*\*Code\*\*: Added `if config.COFACTOR:` filtering condition
-
-
-
-\#### 4. Modified Protein Residue Definition
-
-\- \*\*File\*\*: `plip/structure/preparation.py`
-
-\- \*\*Method\*\*: `load\_pdb()` in `PDBComplex` class
-
-\- \*\*Change\*\*: Include cofactors in protein residue list (self.resis)
 
 
 
