@@ -86,6 +86,7 @@ This is based on PLIP. For the original software:
 If you are using PLIP with cofactor support in your work, please cite:
 
 **For the cofactor modification:**
+- Leite, P. et al. "Underexplored Ligand-Binding Features of FabI From Staphylococcus aureus and Escherichia coli: A Comparative Pharmacophoric Modeling and Surface Mapping Approach." ChemMedChem 2026. doi: [10.1002/cmdc.70410](https://chemistry-europe.onlinelibrary.wiley.com/doi/10.1002/cmdc.70410)
 - Leite, P. et al. "Reading between the Chains: Surface Mapping and Druggable Pockets on the Biological Assemblies of DENV-2's Protein E." *ACS Omega* 2026. doi: [10.1021/acsomega.5c08709](https://pubs.acs.org/doi/10.1021/acsomega.5c08709)
 
 **For the original PLIP:**
